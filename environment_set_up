@@ -1,0 +1,44 @@
+1.
+Python 3 (3.7-3.8.3)
+(programming language)
+download and install                  https://www.python.org/downloads/
+
+2.
+PyCharm
+(IDI)
+download and install                  https://www.jetbrains.com/
+
+3.
+Git
+(a distributed version-control system, vcs)
+download and install                  https://git-scm.com/downloads/
+
+4.
+GitHub
+(a Git repository hosting service)
+register                               https://github.com/
+
+5.
+Google Chrome
+(a browser)
+download and install                   https://www.google.com/chrome/
+
+6.
+chromedriver
+(a driver for the browser)
+download and install                  https://chromedriver.chromium.org/downloads
+
+7.
+create repo a-project on the GitHub
+clone it into project a-project on the desktop(for example)
+
+8.
+open a-project on the PyCharm
+install Python on this project  PyCharm -> Preferences -> Project:a-project -> Project Interpreter
+
+9.
+install on this project: selenium, behave, allure-behave
+                                PyCharm -> Preferences -> Project:a-project -> Project Interpreter
+
+10.
+for verification execute sample_script.py file
