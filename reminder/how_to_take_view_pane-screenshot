@@ -1,0 +1,20 @@
+============== HOW TO TAKE VIEW PANE (BROWSER) SCREENSHOTS: ===================================
+1-METHOD:
+
+element = context.driver.find_element(By.TAG_NAME, 'body')
+element.screenshot("screenshot_full.png")
+
+
+"creenshot_full.png" - THIS FILE WILL BE GENERATED into my framework after shooting
+
+
+
+2-METHOD:
+
+element = driver.find_element_by_tag_name('body')
+element_png = element.screenshot_as_png
+with open("test1.png", "wb") as file:
+file.write(element_png)
+
+
+"test1.png" - THIS FILE WILL BE GENERATED into my framework after shooting

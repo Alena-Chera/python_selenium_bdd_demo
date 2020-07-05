@@ -1,0 +1,41 @@
+Feature: Window handling
+
+  Scenario: Company's website is open in a new tab
+    Given Open a Anchors fish & chips Yelp page
+    When Click a website link
+    And Switch to a new window
+    Then The Anchors fish & chips website is open
+    And A user can close the new window and go to the original one
+
+from selenium.webdriver.common.by import By
+from behave import given, when, then
+from selenium.webdriver.support import expected_conditions as EC
+WEBSITE_LINK = (By.XPATH, "//*[contains(text(), 'anchors-fish-chips-and-sea')]")
+TEXT_WITH_COMPANY_NAME = (By.XPATH, "//*[contains(text(), 'Anchors fish & chips and sea food grill')]")
+
+@given('Open a {company} Yelp page')
+def open_yelp(context, company):
+    context.driver.get
+('https://www.yelp.com/biz/anchors-fish-and-chips-and-seafood-grill-san-jose-2?osq=Anchors+Fish+%26+Chips')
+
+@when('Click a website link')
+def click_link(context):
+    original_windows = context.driver.window_handles
+    context.original_window = context.driver.current_window_handle
+    context.driver.find_elements(*WEBSITE_LINK)[0].click()
+
+@when('Switch to a new window')
+def switch_to_new_window(context):
+    context.driver.wait.until(EC.new_window_is_opened)
+    current_windows = context.driver.window_handles
+    context.driver.switch_to_window(current_windows[1])
+
+@then('The {company} website is open')
+def verify_website_name(context, company):
+    assert context.driver.find_element(*TEXT_WITH_COMPANY_NAME), f'Expected to find {company} name on a page'
+
+@then('A user can close the new window and go to the original one')
+def close_window_and_go_back(context):
+    context.driver.close()
+    context.driver.switch_to_window(context.original_window)
+

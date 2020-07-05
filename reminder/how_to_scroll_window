@@ -1,0 +1,27 @@
+=================== How to SCROLL ========================================================
+https://stackoverflow.com/questions/20986631/how-can-i-scroll-a-web-page-using-selenium-webdriver-in-python
+
+
+1.This will scroll the page till height Y:
+(where Y is the height (on a fullhd monitor it's 1080)
+
+    driver.execute_script("window.scrollTo(0, Y)")
+    sleep(3)
+
+2.This will scroll ALL page:
+
+    sleep(2)
+    from selenium.webdriver.common.keys import Keys
+    html = context.driver.find_element_by_tag_name('html')
+    html.send_keys(Keys.END)
+    sleep(4)
+
+3. This will scroll the part of page page:
+
+    context.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    sleep(4)
+
+But this will scroll all page:
+
+    context.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    sleep(8)
