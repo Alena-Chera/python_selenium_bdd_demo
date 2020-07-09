@@ -1,0 +1,14 @@
+Sometimes I got the issue:
+
+'The element that I wanted to perform a click on
+     is obscured by another element.
+ I would have already verified the state of the element before the click.
+ Things I can consider doing is
+     perform a wait and may be maximize the window/scroll to the element which ever is applicable.
+  But the element was not clickable'
+
+
+ This execute_script.command helped me:
+
+ element = driver.find_element_by_xpath("//button[@role='button']")
+ driver.execute_script("arguments[0].click();", element)

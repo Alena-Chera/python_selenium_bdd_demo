@@ -19,6 +19,7 @@ element_located_to_be_selected
 element_selection_state_to_be
 element_located_selection_state_to_be
 alert_is_present
+new_window_is_opened
 
 
 --------------------------EXPLICIT WAIT:----------------------------
