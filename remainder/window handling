@@ -1,0 +1,56 @@
+====================== Window handling =============================
+
+
+Feature: Header icons
+  Scenario: company's website is open in a new tab
+    Given open Lyte home page
+    When click icon Help
+    And switch to a new window
+    Then Help window is open
+    And user can close the new window and go to the original one
+
+
+@when('click icon {icon}')
+def click_icon(context, icon):
+    original_windows = context.driver.window_handles
+    context.original_window = context.driver.current_window_handle
+    context.driver.find_element(*HELP_LINK).click()
+
+
+@when('switch to a new window')
+def switch_to_new_window(context):
+    context.driver.wait.until(EC.new_window_is_opened)
+    current_windows = context.driver.window_handles
+    context.driver.switch_to_window(current_windows[1])
+
+
+@then('{window_name} window is open')
+def verify_website_name(context, window_name):
+    text_on_help_page = context.driver.find_element(*TEXT_ON_HELP_PAGE).text
+    print(text_on_help_page)
+    assert "HELP" in text_on_help_page, f'Expected to find "HELP", but got {text_on_help_page}'
+
+
+@then('user can close the new window and go to the original one')
+def close_window_and_go_back(context):
+    context.driver.close()
+    context.driver.switch_to_window(context.original_window)
+
+=====OR the same but in short explanation=================
+###   click "Help" icon(context, icon) ###
+   context.original_window = context.driver.current_window_handle
+   context.driver.find_element(*HELP_LINK).click()
+
+###   switch to a new window  ###
+   context.driver.wait.until(EC.new_window_is_opened)
+   current_windows = context.driver.window_handles
+   context.driver.switch_to_window(current_windows[1])
+
+###   verify_website_nameWindow name, window is opened  ###
+   text_on_help_page = context.driver.find_element(*TEXT_ON_HELP_PAGE).text
+   print(text_on_help_page)
+   assert "HELP" in text_on_help_page, f'Expected to find "HELP", but got {text_on_help_page}'
+
+###   close the new window and go to the original one   ###
+   context.driver.close()
+   context.driver.switch_to_window(context.original_window)

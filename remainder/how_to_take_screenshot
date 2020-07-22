@@ -1,0 +1,18 @@
+================= HOW TO TAKE SCREENSHOT: ======================================
+1.
+element = context.driver.find_element(By.TAG_NAME, 'body')
+element.screenshot("screenshot_full.png")
+
+
+"screenshot_full.png" - THIS FILE WILL BE GENERATED INTO my framework after shooting
+
+
+
+2.
+element = driver.find_element_by_tag_name('body')
+element_png = element.screenshot_as_png
+with open("test1.png", "wb") as file:
+file.write(element_png)
+
+
+"test1.png" - THIS FILE WILL BE GENERATED INTO my framework after shooting

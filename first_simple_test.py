@@ -11,7 +11,7 @@ search = driver.find_element(By.NAME, 'q')
 search.clear()
 search.send_keys('Dress')
 
-# wait 3 secchromedriver
+# wait 3 sec
 driver.implicitly_wait(4)
 
 # click search

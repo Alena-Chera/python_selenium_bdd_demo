@@ -1,0 +1,8 @@
+
+
+
+@then('verify correct page is open and text {text} displayed')
+def verify_about_page_opened_and_header_text_displayed(context, text):
+    current_url = context.driver.current_url
+    expected_url = "https://lyte.com/about/"
+    assert expected_url in current_url, f'About Page url is incorrect, expected {expected_url}, but got {current_url}'

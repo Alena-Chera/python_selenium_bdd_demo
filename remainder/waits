@@ -36,9 +36,6 @@ context.driver.wait.until(EC.element_to_be_clickable(By.XPATH, "//a[contains(tex
 
 -or
 
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait.import WebDriverWait
 ELEMENT = (By.XPATH, "//h3 [@class='event_section__name']")
 context.driver.wait.until(EC.element_to_be_clickable(ELEMENT))
-
-
-

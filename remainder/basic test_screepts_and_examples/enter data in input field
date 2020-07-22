@@ -1,0 +1,7 @@
+@when('enter {name} in first name field')
+def enter_first_name(context, name):
+    first_name = context.driver.find_element(*FIRST_NAME_FIELD)
+    first_name.click()
+    first_name.clear()
+    # sleep(1)
+    first_name.send_keys(name)

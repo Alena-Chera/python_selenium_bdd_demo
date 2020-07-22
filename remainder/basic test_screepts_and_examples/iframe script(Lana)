@@ -1,0 +1,27 @@
+==================== iframe script(Lana) ===================================
+                   iframe_sample_script.py
+
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+# init driver
+driver = webdriver.Chrome()
+driver.implicitly_wait(2)
+
+# open the url
+driver.get('https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_iframe')
+
+# switch_to frame 1
+driver.switch_to.frame('iframeResult')
+
+frame = driver.find_element(By.CSS_SELECTOR, "iframe[src='https://www.w3schools.com']")
+driver.switch_to.frame(frame)
+
+# switch_to frame 2
+logo = driver.find_element(By.CSS_SELECTOR, 'a.w3schools-logo')
+
+# verify it switched
+print(logo.get_attribute('href'))
+
+driver.quit()

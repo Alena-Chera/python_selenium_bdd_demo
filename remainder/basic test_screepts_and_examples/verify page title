@@ -1,0 +1,12 @@
+
+
+
+
+@then('verify Pre_registration page {page_name} opened')
+def verify_link_sent_page_opened_user_can_sees_text_about_it(context, page_name):
+    context.driver.wait.until(EC.title_is("Lyte - Pre-registration"))
+    expected_title = "Lyte — Pre-registration"
+    current_title = context.driver.title
+    print(f'Current page title: ', current_title)
+    assert expected_title in current_title, f'Title is wrong. Expected title is "{expected_title}", but actual url is "{current_title}"'
+

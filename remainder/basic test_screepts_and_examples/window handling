@@ -1,0 +1,44 @@
+
+#####################################################################
+TEXT_ON_HELP_PAGE = (By.XPATH, "//h1")
+HELP_LINK = (By.XPATH, "//nav[@class='header_right closed']//a[contains(text(),'Help')]")
+
+   context.original_window = context.driver.current_window_handle
+   context.driver.find_element(*HELP_LINK).click()
+
+   context.driver.wait.until(EC.new_window_is_opened)
+   current_windows = context.driver.window_handles
+   context.driver.switch_to_window(current_windows[1])
+
+   text_on_help_page = context.driver.find_element(*TEXT_ON_HELP_PAGE).text
+   print(text_on_help_page)
+   assert "HELP" in text_on_help_page, f'Expected to find "HELP", but got {text_on_help_page}'
+
+   context.driver.close()
+   context.driver.switch_to_window(context.original_window)
+#####################################################################
+
+
+
+
+
+
+###################  WHAT WE DO _ EXPLANATION  #######################
+
+###   click "Help" icon(context, icon) ###
+   context.original_window = context.driver.current_window_handle
+   context.driver.find_element(*HELP_LINK).click()
+
+###   switch to a new window  ###
+   context.driver.wait.until(EC.new_window_is_opened)
+   current_windows = context.driver.window_handles
+   context.driver.switch_to_window(current_windows[1])
+
+###   verify_website_nameWindow name, window is opened  ###
+   text_on_help_page = context.driver.find_element(*TEXT_ON_HELP_PAGE).text
+   print(text_on_help_page)
+   assert "HELP" in text_on_help_page, f'Expected to find "HELP", but got {text_on_help_page}'
+
+###   close the new window and go to the original one   ###
+   context.driver.close()
+   context.driver.switch_to_window(context.original_window)

@@ -1,0 +1,20 @@
+COMMANDS FOR Tests running from COMMAND LINE:
+
+main_page
+
+1.        behave main_page/features/tests/link_about.feature
+2.        behave main_page/features/tests/cards_event.feature
+
+
+main_page/
+
+COMMANDS FOR ALLURE
+
+main_page
+1.
+behave -f allure_behave.formatter:AllureFormatter -o test_results_1 A_header/features/tests/banner_covid.feature
+
+???
+allure serve test_results/test_results_1
+
+
