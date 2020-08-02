@@ -1,5 +1,0 @@
-=================Verifying the Page==================
-# might be useful for verifying the page:
-
-driver.current_url
-driver.title
