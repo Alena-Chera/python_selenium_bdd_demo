@@ -1,4 +1,6 @@
 
+# These tests cover DuckDuckGo searches
+
 Feature: DuckuckGo Web Browsing
 
   Scenario: Basic DuckuckGo Search

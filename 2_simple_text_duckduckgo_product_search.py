@@ -16,7 +16,7 @@ It’s basic, but it covers typical searching behavior end-to-end.
 from selenium import webdriver
 
 # Initialize ChromeDriver
-driver = webdriver.Chrome(executable_path='drivers/chromedriver')
+driver = webdriver.Chrome()
 
 # Wait implicitly for elements to be ready before attempting interactions
 driver.implicitly_wait(10)

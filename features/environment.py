@@ -4,9 +4,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 def browser_init(context, name):
 
-    context.driver = webdriver.Chrome(executable_path='drivers/chromedriver')
+    context.driver = webdriver.Chrome()
     # context.driver = webdriver.Safari()
-    # context.driver = webdriver.Firefox(executable_path='drivers/geckodriver')
+    # context.driver = webdriver.Firefox()
     # =====================================================================================
     # # ##### HEADLESS #####
     #
@@ -19,8 +19,8 @@ def browser_init(context, name):
     #
     # # Comment lines with "context.driver" before start running test in Browser Stack, lines 12-16
     # # Result of tests execution is here: https://automate.browserstack.com/dashboard/v2
-    # bs_user = "alenaryzhko1"
-    # bs_pw = "UhWjjuzSQ8KsqAafs5Ha"
+    # bs_user = "user_name_has_to_be_here"              #!!!
+    # bs_pw = "user_password_has_to_be_here"            #!!!
     #
     # desired_cap = {
     #     'browser': 'Chrome',
@@ -31,7 +31,6 @@ def browser_init(context, name):
     # }
     # url = f'http://{bs_user}:{bs_pw}@hub-cloud.browserstack.com/wd/hub'
     # context.driver = webdriver.Remote(url, desired_capabilities=desired_cap)
-    #
     # =====================================================================================
 
     context.driver.maximize_window()
