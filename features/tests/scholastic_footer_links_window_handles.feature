@@ -10,6 +10,5 @@ Feature: Home Page footer links. PRIVACY POLICY link, social network link(Tweete
     And be sure user can click on SHOP NOW link
 
 
-
   Scenario: Clicking on a social network link a network page opens
     Then click on Twitter Icon and verify twitter scholastic page was opened
