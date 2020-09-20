@@ -17,20 +17,22 @@ def open_google(context):
 
 @then('click on {privacy_policy_link} link, verify {privacy_text_on_page} new window open, get back to home page')
 def click_privacy_policy_link_verify_privacy_policy_page_open_get_back(context, privacy_policy_link, privacy_text_on_page):
-    context.driver.find_element(*PRIVACY_POLICE_LINK).click()  # will open up a new window in current session
 
-    # 1. Get all window handles
+    # 1. Open up a new window in current session
+    context.driver.find_element(*PRIVACY_POLICE_LINK).click()
+
+    # 2. Get all window handles
     handles = context.driver.window_handles
     size = len(handles)
 
-    # 2. Get parent window handle and store in a temp variable say ‘parent_handle’
+    # 3. Get parent window handle and store in a temp variable say ‘parent_handle’
     parent_handle = context.driver.current_window_handle
 
-    # 3. If handle is not parent window handle, Switch to the child or new window using driver.switch_to.window(handles)
+    # 4. If handle is not parent window handle, Switch to the child or new window using driver.switch_to.window(handles)
     for x in range(size):
         if handles[x] != parent_handle:
             context.driver.switch_to.window(handles[x])
-            # 4. Perform all required operations and close the child or new window
+            # 5. Perform all required operations and close the child or new window
             print(context.driver.title)
             assert privacy_policy_link in context.driver.title
             text_on_privacy_policy_page = context.driver.find_element(*PRIVACY_POLICE_TEXT).text
@@ -39,11 +41,11 @@ def click_privacy_policy_link_verify_privacy_policy_page_open_get_back(context, 
             context.driver.close()
             break
 
-    # 5. Shift the control back to parent window
+    # 6. Shift the control back to parent window
     context.driver.switch_to.window(parent_handle)
 
 
-# 6. Perform required operations / click SHOP NOW link, verify correct page open
+# 7. Perform required operations / click SHOP NOW link, verify correct page open
 @then('be sure user can click on SHOP NOW link')
 def verify_user_can_click_link_on_home_page(context):
     context.driver.find_element(*SHOP_NOW_LINK).click()
