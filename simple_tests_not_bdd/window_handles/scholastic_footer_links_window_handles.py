@@ -1,13 +1,16 @@
-from selenium import webdriver
+"""
+Scholastic.com user wants to do some operation in newly opened child window,
+close it after all operations and do some actions in parent window.
 
-# Scholastic.com user wants to do some operation in newly opened child window,
-# close it after all operations and do some actions in parent window.
+"""
+
+from selenium import webdriver
 
 driver = webdriver.Chrome()
 driver.get("https://www.scholastic.com/home")
 
+# open up a new window in current session by clicking on the link in parent window
 driver.find_element_by_css_selector("span.footer-link--privacy-policy__underline").click()
-# will open up a new window in current session
 
 # 1. Get all window handles
 handles = driver.window_handles
