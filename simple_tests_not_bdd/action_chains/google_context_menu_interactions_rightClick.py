@@ -1,6 +1,6 @@
 
 """
- ActionChains right click (context menu interactions)
+ ActionChains -- right click (context menu interactions)
 
 Scenario to Automate:
 1. Launch the web browser and open the application
