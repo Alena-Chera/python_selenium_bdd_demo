@@ -1,3 +1,5 @@
+# Handling multiple windows.
+
 
 Feature: Home Page footer links. PRIVACY POLICY link, social network link(Tweeter)
   Background:
