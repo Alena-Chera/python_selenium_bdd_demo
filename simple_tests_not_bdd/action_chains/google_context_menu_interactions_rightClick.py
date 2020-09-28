@@ -18,7 +18,7 @@ driver = webdriver.Chrome()
 
 # open the url:
 
-driver.get('https://www.google.com//')
+driver.get('https://www.google.com/')
 # wait 4 sec:
 driver.implicitly_wait(10)
 
