@@ -1,0 +1,28 @@
+Handling multiple windows in Python Selenium
+
+
+
+Python Selenium provides option to handle multiple windows using ‘window_handles’.
+Python Selenium WebDriver assigns an id to each window as soon as the WebDriver object is instantiated or new window is opened using a WebDriver object.
+This unique id is known as window handles.
+
+Also note that WebDriver object always controls only one window at a time in the current session.
+For example, opening a link in new window does not transfer control of WebDriver to new window.
+WebDriver will be still controlling the old window and any operations that we perform using Selenium script will be forwarded to this old window.
+
+We can use this unique id to differentiate a window and switch control among multiple windows.
+
+     Python provides two in-built objects:
+
+          1. window_handles
+
+          Returns the handles of all windows within the current session.
+
+          Syntax: driver.window_handles
+
+          2. current_window_handle
+
+          Returns the handle of the current window.
+
+          Syntax: driver.current_window_handle
+
