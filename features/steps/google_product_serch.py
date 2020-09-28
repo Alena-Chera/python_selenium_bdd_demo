@@ -9,12 +9,12 @@ RESULTS_FOUND_MESSAGE = (By.XPATH, "//div[contains(@class,'commercial-unit-deskt
 RESULTS = (By.XPATH, "//div[@class='g']")
 
 
-@given('Open Google page')
+@given('open Google page')
 def open_google(context):
     context.driver.get('https://www.google.com/')
 
 
-@when('Input {search_word} into search field')
+@when('input {search_word} into search field')
 def input_search(context, search_word):
     search = context.driver.find_element(*SEARCH_INPUT)
     search.clear()
@@ -22,18 +22,18 @@ def input_search(context, search_word):
     sleep(2)
 
 
-@when('Click on search icon')
+@when('click on search icon')
 def click_search_icon(context):
     context.driver.find_element(*SEARCH_SUBMIT).click()
 
 
-@then('Product results for {search_word} are shown')
+@then('product results for {search_word} are shown')
 def verify_found_results_text(context, search_word):
     results_msg = context.driver.find_element(*RESULTS_FOUND_MESSAGE).text
     assert search_word in results_msg, "Expected word '{}' in message, but got '{}'".format(search_word, results_msg)
 
 
-@then('First result contains {search_word}')
+@then('first result contains {search_word}')
 def verify_first_result(context, search_word):
     first_result = context.driver.find_element(*RESULTS).text
     print('\n{}'.format(first_result))
