@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
 PRODUCT_IMAGE = (By.CSS_SELECTOR, "div.card-img")
+QUICK_LOOK_BUTTONS = (By.CSS_SELECTOR, "a.quicklookButton")
 
 
 @given('user opens Sale Teaching kids shop page')
@@ -17,3 +18,5 @@ def hover_over_product_image_verify_Quick_Look_button_appears(context, button_na
         product = context.driver.find_elements(*PRODUCT_IMAGE)[x]
         action = ActionChains(context.driver)
         action.move_to_element(product).perform()
+        assert context.driver.find_elements(*QUICK_LOOK_BUTTONS)[x]
+        assert context.driver.find_elements(*QUICK_LOOK_BUTTONS)[x].text == button_name
