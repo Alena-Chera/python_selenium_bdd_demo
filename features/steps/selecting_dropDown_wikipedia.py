@@ -12,10 +12,10 @@ def open_wikipedia(context):
     context.driver.get('https://www.wikipedia.org/')
 
 
-@when('user selects {language} as search language by visible text "{visible_text}"')
-def selects_language_by_visible_text(context, language, visible_text):
+@when('user selects {language} as search language by visible text "{option}"')
+def selects_language_by_visible_text(context, language, option):
     select = Select(context.driver.find_element(*SELECT_SEARCH_LANGUAGE))
-    select.select_by_visible_text(f'{visible_text}')
+    select.select_by_visible_text(f'{option}')
 
 
 @when('click the search button')
