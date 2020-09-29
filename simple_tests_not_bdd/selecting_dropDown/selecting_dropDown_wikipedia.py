@@ -15,6 +15,7 @@ driver.maximize_window()
 select = Select(driver.find_element(By.CSS_SELECTOR, "select#searchLanguage"))
 select.select_by_visible_text('Deutsch')
 
+
 # click the search button
 search_button = driver.find_element(By.CSS_SELECTOR, "button.pure-button.pure-button-primary-progressive")
 search_button.click()
