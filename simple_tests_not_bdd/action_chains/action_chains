@@ -33,3 +33,6 @@ This is useful for doing more complex actions like hover over and drag and drop.
 
     Either way, the actions are performed in the order they are called, one after
     another.
+
+(Mouse actions in detail:
+ https://www.selenium.dev/documentation/en/support_packages/mouse_and_keyboard_actions_in_detail/)

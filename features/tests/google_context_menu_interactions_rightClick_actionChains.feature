@@ -1,13 +1,17 @@
-# ActionChains -- perform a context-click (right click) on an element.
-#
+# 1. ActionChains -- perform a context-click (right click) on an element.
+
+# Syntax:
 # context_click(on_element=None)
+
 # Parameters:
 # on_element: The element to context-click or right click on. If no element passed, right clicks on current mouse position.
 
 
-# ActionChains -- sends keys to current focused element.
-#
+# 2. ActionChains -- sends keys to current focused element.
+
+# Syntax:
 # send_keys(keys_to_send)
+
 # Parameters:
 # keys_to_send: The keys to send.       (Keys.ARROW_DOWN, Keys.ENTER)
 
