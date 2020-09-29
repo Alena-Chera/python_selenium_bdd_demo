@@ -1,7 +1,6 @@
 from behave import given, when, then
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
-from selenium.webdriver.support import expected_conditions as EC
 
 SELECT_SEARCH_LANGUAGE = (By.CSS_SELECTOR, "select#searchLanguage")
 SEARCH_BUTTON = (By.CSS_SELECTOR, "button.pure-button.pure-button-primary-progressive")
