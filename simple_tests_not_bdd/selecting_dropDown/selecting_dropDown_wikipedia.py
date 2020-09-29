@@ -24,6 +24,7 @@ driver.implicitly_wait(2)
 
 text_on_the_page = driver.find_element(By.ID, 'firstHeading').text
 print(text_on_the_page)
+
 # make sure the page has been opened and contains information in German
 assert 'Suche' == text_on_the_page
 
