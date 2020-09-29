@@ -1,0 +1,31 @@
+                           Selecting A DropDown
+
+
+Since a dropdown has many options, so it is important that we select something separately.
+Selenium Python API provides the Select class, which allows us to select the element of our choice.
+
+First, we need import the "Select":
+from selenium.webdriver.support.select import Select
+
+Note : The Select class only works with tags which have select tags.
+
+Then, we can select
+using the Index of Dropdown:
+                   if the dropdown has an “index” attribute, then we can use that index to select a particular option.
+                   We need to be careful while using this way, because it is not un-common to have the index start at 0.
+
+                   We can use the "select_by_index()" method to select an option using the index attribute.
+
+using the Value of Dropdown:
+                   if the html mark-up defines an option tag, then we can use the value matching the argument.
+
+                   We can use the "select_by_value()" method to select an option.
+
+using the Text of Dropdown:
+                   we have to match the text which is displayed in the drop down.
+
+                   We can use the "select_by_visible_text()" method to select an option.
+
+
+
+
