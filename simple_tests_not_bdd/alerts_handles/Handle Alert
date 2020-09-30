@@ -34,7 +34,7 @@ alert = wait.until(expected_conditions.alert_is_present())
 # Store the alert text in a variable
 text = alert.text
 
-# Press the OK button
+# Press the OK button to accept the alert
 alert.accept()
                            alert.accept() – will press the 'OK' button
                            alert.dismiss() – will dismiss the alert
