@@ -19,7 +19,7 @@ driver = webdriver.Chrome()
 # open the url:
 driver.get('https://www.google.com/')
 
-# wait 4 sec:
+# wait 10 sec:
 driver.implicitly_wait(10)
 
 link = driver.find_elements(By.CSS_SELECTOR, "div#hptl a ")[0]

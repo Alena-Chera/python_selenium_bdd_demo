@@ -20,7 +20,7 @@ driver = webdriver.Chrome()
 # open the url:
 
 driver.get('https://shop.scholastic.com/teachers-ecommerce/teacher/shops/teaching-kits.html')
-# wait 4 sec:
+# wait 10 sec:
 driver.implicitly_wait(10)
 
 all_products = driver.find_elements(By.CSS_SELECTOR, "div.card-img")
