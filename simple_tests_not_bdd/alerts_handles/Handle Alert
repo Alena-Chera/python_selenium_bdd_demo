@@ -29,8 +29,8 @@ we can do different actions on it using available methods.
 
 2.   a) Handling a Simple Alert
 
-     alert.accept() – Will click on 'OK' button
-     alert.dismiss() – Will click on 'Cancel' button
+     alert.accept() – will click on 'OK' button
+     alert.dismiss() – will click on 'Cancel' button
      alert.text – will get the text which is present on the Alert
 
      b) Handling a Confirmation Alert
@@ -39,12 +39,18 @@ we can do different actions on it using available methods.
      or ‘Cancel’ button to dismiss it.
      This alert also has same properties as in Alert – accept(), dismiss(), text
 
-     c) Handling Prompt Alert
+     c) Handling a Prompt Alert
 
      user enters any value in text box and
      clicks on the ‘OK’ button to accept,
      ‘Cancel’ button to dismiss the pop-up.
-     This pop-up supports one more method send_keys() along with accept(), dismiss() and text.
+     This pop-up supports one more method - send_keys()
+     along with - accept(), dismiss(), text:
+
+     alert.send_keys('Some text to send') - will send the text
+     alert.accept() – will click on 'OK' button
+     alert.dismiss() – will click on 'Cancel' button
+     alert.text – will get the text which is present on the Alert
 
 3. Fourth Type
 
