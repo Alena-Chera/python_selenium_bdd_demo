@@ -18,8 +18,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 driver = webdriver.Chrome()
 
 # open the url:
-
 driver.get('https://shop.scholastic.com/teachers-ecommerce/teacher/shops/teaching-kits.html')
+
 # wait 10 sec:
 driver.implicitly_wait(10)
 
