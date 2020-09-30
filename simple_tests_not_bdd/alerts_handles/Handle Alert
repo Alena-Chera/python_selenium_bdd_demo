@@ -37,7 +37,12 @@ we can do different actions on it using available methods.
 
      click on the ‘OK’ button to accept it
      or ‘Cancel’ button to dismiss it.
-     This alert also has same properties as in Alert – accept(), dismiss(), text
+
+     This alert also has same properties as in Alert – accept(), dismiss(), text:
+
+     alert.accept() – will click on 'OK' button
+     alert.dismiss() – will click on 'Cancel' button
+     alert.text – will get the text which is present on the Alert
 
      c) Handling a Prompt Alert
 
