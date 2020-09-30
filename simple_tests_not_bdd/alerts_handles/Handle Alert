@@ -23,7 +23,7 @@ Purpose of prompt alert is to take some input from the user.
 
 WebDriver provides an API for working with the three types of native popup messages offered by JavaScript.
 
-1) Handling a Simple Alert
+1. Handling a Simple Alert
 
 # Click the link to activate the alert
 driver.find_element(By.LINK_TEXT, "See an example alert").click()
@@ -40,7 +40,7 @@ alert.accept()
                            alert.dismiss() – will dismiss the alert
                            alert.text – will get the text which is present on the alert
 
-2) Handling a Confirmation Alert
+2. Handling a Confirmation Alert
 
 # Click the link to activate the alert
 driver.find_element(By.LINK_TEXT, "See a sample confirm").click()
@@ -64,7 +64,7 @@ alert.dismiss()
                             alert.dismiss() – will press the 'Cancel' button
                             alert.text – will get the text which is present on the Confirmation alert
 
-3) Handling Prompt
+3. Handling Prompt
 
 # Click the link to activate the alert
 driver.find_element(By.LINK_TEXT, "See a sample prompt").click()
