@@ -1,16 +1,17 @@
-              Alerts in Selenium Python
+              Alerts in Selenium Python (JavaScript alerts, prompts and confirmations)
 
 An Alert or Prompt or Confirm popup on the web page
 used to get the attention of the user to perform some operation
 on the alert or the web page;
 sometimes alerts expect input from the user.
 
-All the alerts are formed using javascript inside the HTML page;
-there are three kinds of alerts in HTML:
+All the alerts are formed using javascript inside the HTML page.
+These popups are styled by the browser and offer limited customisation.
+There are three kinds of alerts in HTML:
 
-1. Simple Alert ('OK' button)
-2. Confirmation Alert ('OK' button, 'Cancel' button)
-3. Prompt Alert (text box, 'Ok' button, 'Cancel' button)
+1. An Alert ('OK' button)
+2. A Confirm Box ('OK' button, 'Cancel' button)
+3. Prompt (text box, 'Ok' button, 'Cancel' button)
 
 Purpose of simple alert is to give some information or warning to the user.
 Purpose of confirm alert is to take permission from the user before doing something.
@@ -20,51 +21,88 @@ Purpose of prompt alert is to take some input from the user.
 
                 Handle Alert & Popups In Selenium Python
 
-1. First we need to switch or transfer the control to alert pop-up before doing any operations.
+WebDriver provides an API for working with the three types of native popup messages offered by JavaScript.
 
-driver.switch_to.alert
+1) Handling a Simple Alert
 
-After the control has moved to Alert pop-up,
-we can do different actions on it using available methods.
+# Click the link to activate the alert
+driver.find_element(By.LINK_TEXT, "See an example alert").click()
 
-2.   a) Handling a Simple Alert
+# Wait for the alert to be displayed and store it in a variable
+alert = wait.until(expected_conditions.alert_is_present())
 
-     alert.accept() – will click on 'OK' button
-     alert.dismiss() – will click on 'Cancel' button
-     alert.text – will get the text which is present on the Alert
+# Store the alert text in a variable
+text = alert.text
 
-     b) Handling a Confirmation Alert
+# Press the OK button
+alert.accept()
+                           alert.accept() – will press the 'OK' button
+                           alert.dismiss() – will dismiss the alert
+                           alert.text – will get the text which is present on the alert
 
-     click on the ‘OK’ button to accept it
-     or ‘Cancel’ button to dismiss it.
+2) Handling a Confirmation Alert
 
-     This alert also has same properties as in Alert – accept(), dismiss(), text:
+# Click the link to activate the alert
+driver.find_element(By.LINK_TEXT, "See a sample confirm").click()
 
-     alert.accept() – will click on 'OK' button
-     alert.dismiss() – will click on 'Cancel' button
-     alert.text – will get the text which is present on the Alert
+# Wait for the alert to be displayed
+wait.until(expected_conditions.alert_is_present())
 
-     c) Handling a Prompt Alert
+# Store the alert in a variable for reuse
+alert = driver.switch_to.alert
 
-     user enters any value in text box and
-     clicks on the ‘OK’ button to accept,
-     ‘Cancel’ button to dismiss the pop-up.
-     This pop-up supports one more method - send_keys()
-     along with - accept(), dismiss(), text:
+# Store the alert text in a variable
+text = alert.text
 
-     alert.send_keys('Some text to send') - will send the text
-     alert.accept() – will click on 'OK' button
-     alert.dismiss() – will click on 'Cancel' button
-     alert.text – will get the text which is present on the Alert
+# Press the Cancel button
+alert.dismiss()
+                            press the ‘OK’ button to accept it
+                            or
+                            press the‘Cancel’ button to dismiss it.
 
-3. Fourth Type
+                            alert.accept() – will press the 'OK' button
+                            alert.dismiss() – will press the 'Cancel' button
+                            alert.text – will get the text which is present on the Confirmation alert
+
+3) Handling Prompt
+
+# Click the link to activate the alert
+driver.find_element(By.LINK_TEXT, "See a sample prompt").click()
+
+# Wait for the alert to be displayed
+wait.until(expected_conditions.alert_is_present())
+
+# Store the alert in a variable for reuse
+alert = Alert(driver)
+
+# Type your message
+alert.send_keys("Selenium")
+
+# Press the OK button
+alert.accept()
+
+                             user enters any value in text box and
+                             press the ‘OK’ button to accept,
+                             or
+                             press the ‘Cancel’ button to dismiss the pop-up.
+                             This pop-up supports one more method - send_keys()
+                             along with accept(), dismiss(), text:
+
+                             alert.send_keys('Some text to send') - will send the text
+                             alert.accept() – will press the 'OK' button
+                             alert.dismiss() – will press the 'Cancel' button
+                             alert.text – will get the text which is present on Prompt
+
+4) Fourth Type
 
 Apart from these three types, there are other popups generated by web page.
 It is easy to handle these pop-ups as they are generated by html code
 and we can find it’s element locator;
 And do not support accept() or dismiss() methods which is only available for browser native pop-ups.
 
-When you try to switch to alert on display of these popups,
-you get NoAlertPresentException.
-Because they are not alerts.
+When we try to switch to alert on display of these popups,
+we get NoAlertPresentException
+because they are not the alerts.
 (selenium.common.exceptions.NoAlertPresentException: Message: no such alert)
+
+https://www.selenium.dev/documentation/en/webdriver/js_alerts_prompts_and_confirmations/
