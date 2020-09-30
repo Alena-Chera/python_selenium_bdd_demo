@@ -17,8 +17,8 @@ from selenium.webdriver.common.keys import Keys
 driver = webdriver.Chrome()
 
 # open the url:
-
 driver.get('https://www.google.com/')
+
 # wait 4 sec:
 driver.implicitly_wait(10)
 
