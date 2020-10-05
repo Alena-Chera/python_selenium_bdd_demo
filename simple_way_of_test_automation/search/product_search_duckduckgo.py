@@ -23,6 +23,11 @@ from selenium import webdriver
 # Initialize the ChromeDriver instance
 driver = webdriver.Chrome()
 
+# Maximize window
+# We try to stay our test more stable - we open the window for full size
+# to make sure that user actually works with a full screen
+driver.maximize_window()
+
 # Make its calls wait up to 10 seconds for elements to appear
 # (Wait implicitly for elements to be ready before attempting interactions)
 driver.implicitly_wait(10)
