@@ -15,10 +15,11 @@ It’s basic, but it covers typical searching behavior end-to-end.
 """
 from selenium import webdriver
 
-# Initialize ChromeDriver
+# Initialize the ChromeDriver instance
 driver = webdriver.Chrome()
 
-# Wait implicitly for elements to be ready before attempting interactions
+# Make its calls wait up to 10 seconds for elements to appear
+# (Wait implicitly for elements to be ready before attempting interactions)
 driver.implicitly_wait(10)
 
 # Set up some test case data
@@ -54,5 +55,21 @@ assert len(phrase_results) > 0
 search_input = driver.find_element_by_id('search_form_input')
 assert search_input.get_attribute('value') == PHRASE
 
-# For cleanup, quit the driver
+# Quit the WebDriver instance for the cleanup
 driver.quit()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
