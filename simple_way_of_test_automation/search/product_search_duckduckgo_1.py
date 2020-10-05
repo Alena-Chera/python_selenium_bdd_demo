@@ -17,3 +17,28 @@ Feature: Search using DuckDuckGo
 Scenario: Basic DuckuckGo Search
 
 """
+from selenium import webdriver
+
+driver = webdriver.Chrome()
+driver.maximize_window()
+driver.implicitly_wait(10)
+
+
+# Given the DuckuckGohome page is displayed
+# TODO
+
+# When the user searches for "gift"
+# TODO
+
+# Then search results for "gift" should appear
+# TODO
+
+# The search phrase appears in the search bar
+# TODO
+
+# And at least one search result contains the search phrase
+# TODO
+
+
+# Quit the WebDriver instance for the cleanup
+driver.quit()
