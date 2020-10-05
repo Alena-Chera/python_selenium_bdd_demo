@@ -1,7 +1,7 @@
 
 # These tests cover DuckDuckGo searches
 
-Feature: DuckuckGo Web Browsing
+Feature: Search using DuckDuckGo
 
   Scenario: Basic DuckuckGo Search
     Given the DuckuckGohome page is displayed
