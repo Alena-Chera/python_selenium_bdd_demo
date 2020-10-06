@@ -9,7 +9,7 @@ driver.get('https://www.google.com/')
 
 search = driver.find_element(By.NAME, 'q')
 search.clear()
-search.send_keys('Dress')
+search.send_keys('jeans')
 
 # wait 3 sec
 driver.implicitly_wait(4)
@@ -18,7 +18,7 @@ driver.implicitly_wait(4)
 driver.find_element(By.NAME, 'btnK').click()
 
 # verify
-assert 'Dress' in driver.find_element(By.XPATH, "//div[contains(@class,'commercial-unit-desktop-top')]").text
-assert 'Dress' in driver.find_element(By.XPATH, "//div[@class='g']").text
+assert 'jeans' in driver.find_element(By.XPATH, "//div[contains(@class,'commercial-unit-desktop-top')]").text
+assert 'jeans' in driver.find_element(By.XPATH, "//div[@class='g']").text
 
 driver.quit()
