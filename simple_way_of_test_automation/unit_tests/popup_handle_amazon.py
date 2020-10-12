@@ -1,3 +1,7 @@
+"""
+         Python webdriver to handle pop up browser windows which is not an alert
+"""
+
 import unittest
 
 from selenium import webdriver
