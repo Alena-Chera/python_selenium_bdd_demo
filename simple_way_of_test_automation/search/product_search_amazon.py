@@ -20,25 +20,30 @@ from selenium.webdriver.common.keys import Keys
 driver = webdriver.Chrome()
 
 # Maximize window
-# We try to stay our test more stable - we open the window for full size
-# to make sure that user actually works with a full screen
 driver.maximize_window()
 
-# Make its calls wait up to 10 seconds for elements to appear
-# (Wait implicitly for elements to be ready before attempting interactions)
+# Wait implicitly for elements to be ready before attempting interactions
 driver.implicitly_wait(10)
 
 # Given the Amazon page is displayed
 driver.get('https://www.amazon.com/')
 
 # When the user searches for "tablet"
+
+# input search word and click ENTER key
 search_keyword = 'tablet'
 driver.find_element(By.ID, "twotabsearchtextbox").send_keys(search_keyword + Keys.ENTER)
+
 # OR
-# driver.find_element(By.ID,"twotabsearchtextbox").send_keys("tablet")
+# input search word and click search button, find this element by NAME
+# driver.find_element(By.ID, "twotabsearchtextbox").send_keys(search_keyword)
 # driver.find_element(By.NAME, "site-search").submit()
+
+# OR
+# input search word and click search button, find this element by CSS_SELECTOR using argument value
 # driver.find_element(By.ID,"twotabsearchtextbox").send_keys("tablet")
 # driver.find_element(By.CSS_SELECTOR, "input.nav-input[value='Go']").click()
+
 
 # Then results page for "tablet" opened
 search_word_on_results_page = driver.find_element(By.CSS_SELECTOR, "span.a-color-state.a-text-bold").text
