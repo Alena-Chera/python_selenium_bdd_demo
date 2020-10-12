@@ -26,11 +26,6 @@ class AmazonBestSellerExample(unittest.TestCase):
         # Search for "tablet"
         search_keyword = 'tablet'
         driver.find_element(By.ID, "twotabsearchtextbox").send_keys(search_keyword + Keys.ENTER)
-        # OR
-        # driver.find_element(By.ID,"twotabsearchtextbox").send_keys("tablet")
-        # driver.find_element(By.NAME, "site-search").submit()
-        # driver.find_element(By.ID,"twotabsearchtextbox").send_keys("tablet")
-        # driver.find_element(By.CSS_SELECTOR, "input.nav-input[value='Go']").click()
 
         # Click on first matching result
         first_product = driver.find_elements(By.CSS_SELECTOR, "a.a-link-normal.s-no-outline")[0]
