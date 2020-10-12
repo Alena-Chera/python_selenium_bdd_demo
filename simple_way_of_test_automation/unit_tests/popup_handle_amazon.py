@@ -32,6 +32,7 @@ class AmazonBestSellerExample(unittest.TestCase):
 
         wait.until(expected_conditions.presence_of_element_located((By.ID, "add-to-cart-button"))).click()
 
+        # close popup if it appears
         if driver.find_elements(By.ID, 'a-popover-1') and driver.find_element(By.ID, 'a-popover-1').is_displayed():
             driver.find_element_by_css_selector('#a-popover-1 .a-button-close').click()
 
