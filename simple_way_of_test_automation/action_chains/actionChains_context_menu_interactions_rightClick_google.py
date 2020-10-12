@@ -37,7 +37,7 @@ current_url = driver.current_url
 print(current_url)
 assert "about.google" in current_url
 
-# close browser
+# close browser, not just the window
 driver.quit()
 
 

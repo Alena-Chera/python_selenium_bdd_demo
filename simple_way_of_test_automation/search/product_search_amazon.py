@@ -50,5 +50,6 @@ search_word_on_results_page = driver.find_element(By.CSS_SELECTOR, "span.a-color
 assert search_keyword in search_word_on_results_page
 
 # Quit the WebDriver instance for the cleanup
+# This closes the browser session, not just the window
 driver.quit()
 

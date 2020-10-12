@@ -21,4 +21,5 @@ driver.find_element(By.NAME, 'btnK').click()
 assert 'jeans' in driver.find_element(By.XPATH, "//div[contains(@class,'commercial-unit-desktop-top')]").text
 assert 'jeans' in driver.find_element(By.XPATH, "//div[@class='g']").text
 
+# closes the browser session, not just the window
 driver.quit()

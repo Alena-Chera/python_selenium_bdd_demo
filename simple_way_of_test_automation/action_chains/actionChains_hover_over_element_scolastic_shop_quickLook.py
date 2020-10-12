@@ -31,5 +31,5 @@ for x in range(len(all_products)):
     assert driver.find_elements(By.CSS_SELECTOR, "a.quicklookButton")[x]
     assert driver.find_elements(By.CSS_SELECTOR, "a.quicklookButton")[x].text == "QUICK LOOK"
 
-# close browser
+# closes the browser session, not just the window
 driver.quit()

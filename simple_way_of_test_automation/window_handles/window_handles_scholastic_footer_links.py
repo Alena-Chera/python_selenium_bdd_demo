@@ -39,4 +39,5 @@ driver.switch_to.window(parent_handle)
 driver.find_element_by_css_selector("div.cmp-compoundheader__actionLink.cmp-labelTextLink a.cmp-title__link").click()
 assert "shop.scholastic.com" in driver.current_url
 
+# Closes the browser session, not just the window
 driver.quit()

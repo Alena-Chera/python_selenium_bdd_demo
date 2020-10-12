@@ -88,6 +88,7 @@ assert len(phrase_results) > 0
 
 
 # Quit the WebDriver instance for the cleanup
+# This closes the browser session, not just the window
 driver.quit()
 
 
