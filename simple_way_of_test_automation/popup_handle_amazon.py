@@ -32,7 +32,7 @@ driver.implicitly_wait(10)
 driver.get('https://www.amazon.com/')
 
 # Search for "tablet", click on first matching result
-search_keyword = 'tablet'
+search_keyword = 'ipad'
 driver.find_element(By.ID,"twotabsearchtextbox").send_keys(search_keyword)
 driver.find_element(By.CSS_SELECTOR, "input.nav-input[value='Go']").click()
 
@@ -49,5 +49,4 @@ if driver.find_elements(By.ID, 'a-popover-1') and driver.find_element(By.ID, 'a-
 
 # Quit the WebDriver instance for the cleanup
 driver.quit()
-
 
