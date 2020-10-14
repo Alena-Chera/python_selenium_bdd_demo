@@ -1,5 +1,5 @@
 """
-Scholastic.com user wants to do some operation in newly opened child window,
+scholastic.com user wants to do some operation in newly opened child window,
 close it after all operations and do some actions in parent window.
 
 """
