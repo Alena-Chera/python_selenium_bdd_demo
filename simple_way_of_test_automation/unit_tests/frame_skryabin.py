@@ -15,7 +15,7 @@ class FrameDemo(unittest.TestCase):
     def test_frame_fields(self):
         browser = self.browser
 
-        #         outside a frame
+        #        I. Outside a Frame
 
         #  First, we have to locate IFrame(frame) on the web page.
         #  There are 3 different mechanisms by which we can do this:
@@ -32,7 +32,7 @@ class FrameDemo(unittest.TestCase):
 
         # Then, we can do some actions inside a frame
 
-        #          inside a frame
+        #          II. Inside a Frame
         self.assertTrue(2 == len(browser.find_elements_by_tag_name('label')))
 
         displayed = browser.find_element_by_id('contactPersonName').is_displayed()
@@ -40,11 +40,13 @@ class FrameDemo(unittest.TestCase):
         browser.find_element_by_id("contactPersonName").send_keys("some text")
         # self.assertEqual("Contact Person Phone", browser.find_element_by_xpath("//*[@id='contactPersonPhone']/preceding::label[1]").text)
 
+        #          III. Back to the parent HTML
+
         # You need to move back from an IFrame to the parent HTML.
         # Selenium Webdriver provides the following method:
         browser.switch_to.default_content()
 
-        # outside a frame
+        #          IV. Outside a Frame again
         displayed = browser.find_element_by_id('samplePageForm').is_displayed()
         self.assertTrue(displayed)
 
