@@ -14,11 +14,25 @@ class FrameDemo(unittest.TestCase):
 
     def test_frame_fields(self):
         browser = self.browser
-        # outside a frame
+
+        #         outside a frame
+
+        #  First, we have to locate IFrame(frame) on the web page.
+        #  There are 3 different mechanisms by which we can do this:
+        #
+        # – By using the tag name ( for example, ‘iframe’)
+        #
+        # – By using the Id of IFrame
+        #
+        # – By using the name of IFrame (in this case it is 'additionalInfo')
+
+        # Second, we do the switching to IFrame using the following step:
 
         browser.switch_to.frame(browser.find_element_by_name('additionalInfo'))
 
-        # inside a frame
+        # Then, we can do some actions inside a frame
+
+        #          inside a frame
         self.assertTrue(2 == len(browser.find_elements_by_tag_name('label')))
 
         displayed = browser.find_element_by_id('contactPersonName').is_displayed()
@@ -26,6 +40,8 @@ class FrameDemo(unittest.TestCase):
         browser.find_element_by_id("contactPersonName").send_keys("some text")
         # self.assertEqual("Contact Person Phone", browser.find_element_by_xpath("//*[@id='contactPersonPhone']/preceding::label[1]").text)
 
+        # You need to move back from an IFrame to the parent HTML.
+        # Selenium Webdriver provides the following method:
         browser.switch_to.default_content()
 
         # outside a frame
