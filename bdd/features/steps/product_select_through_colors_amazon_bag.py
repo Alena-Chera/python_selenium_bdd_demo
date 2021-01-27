@@ -34,7 +34,6 @@ def monogram_has_description(context):
 def add_needed_bag_color_to_cart(context, need_color):
     for bag_color in context.bag_colors:
         if need_color in bag_color.get_attribute('title'):
-            sleep(3)
             bag_color.click()
     add_to_cart_button = context.driver.find_element(*ADD_TO_CART_BUTTON_LOCATOR)
 
